@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Gaming Website - Games</title>
+  <title>Ormond Games</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,9 +29,9 @@
     <h2>Games</h2>
     <div class="games-list">
     <div class="game">
-        <a href="#">
+        <a href="games/sudoku.php">
         <img src="game1.jpg" alt="Game 1">
-        <h3>Game 1</h3>
+        <h3>Sudoku</h3>
         <p>Description of Game 1</p>
         </a>
     </div>

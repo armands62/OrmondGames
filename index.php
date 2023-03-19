@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Gaming Website</title>
+    <title>Ormond Games</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
@@ -29,7 +29,7 @@
     <!-- Main content -->
     <main>
       <section id="home">
-        <h2>Welcome to My Gaming Website!</h2>
+        <h2>Welcome to Ormond Games!</h2>
         <p>
           Discover the latest and greatest games for all platforms. We offer a
           wide range of games that cater to all types of players, from
@@ -46,6 +46,5 @@
 
     <?php include 'footer.php'; ?>
 
-    <script src="header.js"></script>
   </body>
 </html>
