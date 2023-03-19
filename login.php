@@ -22,6 +22,7 @@ if (isset($_POST['submit'])) {
             session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $username;
+            
 
             // Redirect to the home page
             header('Location: index.php');

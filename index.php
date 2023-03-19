@@ -1,3 +1,8 @@
+<?php  
+
+    session_start();  
+
+?>  
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,6 +16,7 @@
     <header>
       <nav>
         <ul>
+        <img class="logo" src="images/ormondgames.png" alt="logo">
           <li><a href="index.php" class="active">Home</a></li>
           <li><a href="games.php">Games</a></li>
           <li><a href="#">Support</a></li>

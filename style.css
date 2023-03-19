@@ -19,7 +19,7 @@ a {
 
 /* Header styles */
 header {
-  background-color: #0095ff;
+  background-color: #79848b;
   color: #fff;
   padding: 1rem;
   align-items: center;
@@ -36,6 +36,7 @@ nav ul {
 }
 
 nav ul li {
+  margin-left: auto;
   margin-right: 4rem;
 }
 
