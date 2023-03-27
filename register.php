@@ -62,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <header>
     <nav>
       <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="games.php">Games</a></li>
+        <img class="logo" src="images/ormondgames.png" alt="logo">
+        <li><a href="index.php">Games</a></li>
         <li><a href="#">Support</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="login.php" class="active">Log in</a></li>

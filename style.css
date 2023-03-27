@@ -1,9 +1,17 @@
 /* Global styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
+  font-family: "warungasemregular", Arial, sans-serif;
+  background-color: #ba3026;
   margin: 0;
   padding: 0;
+}
+
+@font-face {
+  font-family: "warungasemregular";
+  src: url("webfontkit/warungasem-rgo1o-webfont.woff2") format("woff2"),
+    url("webfontkit/warungasem-rgo1o-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 h2 {
@@ -13,13 +21,13 @@ h2 {
 }
 
 a {
-  color: #0095ff;
+  color: #e93c30;
   text-decoration: none;
 }
 
 /* Header styles */
 header {
-  background-color: #79848b;
+  background-color: #000000;
   color: #fff;
   padding: 1rem;
   align-items: center;
@@ -36,6 +44,7 @@ nav ul {
 }
 
 nav ul li {
+  margin-top: 1.5rem;
   margin-left: auto;
   margin-right: 4rem;
 }
@@ -46,20 +55,21 @@ nav ul li:last-child {
 }
 
 nav ul li a {
-  color: #fff;
-  font-weight: bold;
+  font-size: 2rem;
+  font-family: "warungasemregular";
+  color: #e93c30;
   padding: 0.5rem;
   transition: all 0.2s ease-in-out;
 }
 
 nav ul li a:hover {
-  background-color: #fff;
-  color: #0095ff;
+  background-color: #e93c30;
+  color: #000000;
 }
 
 nav ul li a.active {
-  background-color: #fff;
-  color: #0095ff;
+  background-color: #e93c30;
+  color: #000000;
 }
 
 /* Main content styles */
@@ -80,7 +90,8 @@ main {
 
 /* Footer styles */
 footer {
-  background-color: #ddd;
+  color: #e93c30;
+  background-color: #000000;
   padding: 1rem;
   text-align: center;
 }
