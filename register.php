@@ -39,11 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   }
 
-  // If there are no errors, create the user account and redirect to the login page
-  if (count($errors) === 0) {
-    $hash = password_hash($password, PASSWORD_DEFAULT);
+  // If there are no errors, create the user account and redirect to the login page and create a new entry in the profile table
+
+  if (empty($errors)) {
     $stmt = $db->prepare('INSERT INTO users (username, email, password) VALUES (?, ?, ?)');
-    $stmt->execute(array($username, $email, $hash));
+    $stmt->execute(array($username, $email, password_hash($password, PASSWORD_DEFAULT)));
+    $stmt = $db->prepare('INSERT INTO profiles (user_id) VALUES (?)');
+    $stmt->execute(array($db->lastInsertId()));
     header('Location: login.php');
     exit;
   }

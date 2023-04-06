@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
             
 
             // Redirect to the home page
-            header('Location: index.php');
+            header('Location: profile.php');
             exit;
         } else {
             // Authentication failed - show error message
