@@ -16,7 +16,7 @@
       <ul>
         <img class="logo" src="images/ormondgames.png" alt="logo">
         <li><a href="index.php" class="active">Games</a></li>
-        <li><a href="#">Support</a></li>
+        <li><a href="support.php">Support</a></li>
         <li><a href="#">Contact</a></li>
         <?php
             if (isset($_SESSION['user_id'])) {
