@@ -24,6 +24,9 @@
         ?>
     </nav>
   </header>
+  <main>
+  <div><script src="https://cdn.htmlgames.com/embed.js?game=PyramidMahjongSolitaire&amp;bgcolor=white"></script></div>
+          </main>
 
 <?php include '../footer.php'; ?>
 </body>
