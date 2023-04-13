@@ -43,6 +43,7 @@
       foreach ($games as $game) {
         echo '<div class="game">';
         echo '<h3>' . $game['name'] . '</h3>';
+        echo '<img src="' . $game['image'] . '" alt="' . $game['name'] . '">';
         echo '<a href="game.php?id=' . $game['id'] . '">Play</a>';
         echo '</div>';
       }
