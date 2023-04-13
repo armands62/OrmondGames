@@ -29,9 +29,14 @@
       <ul>
         <img class="logo" src="images/ormondgames.png" alt="logo">
         <li><a href="index.php">Games</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="support.php">Support</a></li>
+        <li><a href="contact.php">Contact</a></li>
         <li><a href="profile.php" class="active">Profile</a></li>
+        <?php
+        if ($_SESSION['admin'] == 1) {
+                echo '<li><a href="admin.php">Admin</a></li>';
+              }
+        ?>
         <li><a href="logout.php">Log out</a></li>
             
     </nav>

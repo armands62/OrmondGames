@@ -34,21 +34,15 @@
   </header>
   
   <main>
-    <h2>Games</h2>
     <?php
       require_once 'backend/db.php';
-      $stmt = $db->prepare('SELECT * FROM games');
-      $stmt->execute();
-      $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($games as $game) {
-        echo '<div class="game">';
-        echo '<h3>' . $game['name'] . '</h3>';
-        echo '<a href="game.php?id=' . $game['id'] . '">Play</a>';
-        echo '</div>';
-      }
+      $stmt = $db->prepare('SELECT * FROM games WHERE id = :id');
+      $stmt->execute(['id' => $_GET['id']]);
+      $game = $stmt->fetch(PDO::FETCH_ASSOC);
+      echo '<h2>' . $game['name'] . '</h2>';
+      echo '<div><script src="' . $game['url'] . '"></script></div>';
     ?>
    </main>
-
     <?php include 'footer.php'; ?>
 </body>
 </html>

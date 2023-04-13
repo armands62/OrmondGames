@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
         $error = 'Please enter a username and password.';
     } else {
         // Check if the user exists in the database
-        $stmt = $db->prepare('SELECT id, password FROM users WHERE username = :username');
+        $stmt = $db->prepare('SELECT id, password, is_admin FROM users WHERE username = :username');
         $stmt->bindParam(':username', $username);
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -22,9 +22,9 @@ if (isset($_POST['submit'])) {
             session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $username;
+            $_SESSION['admin'] = $user['is_admin'];
             
-
-            // Redirect to the home page
+            // Redirect to the profile page
             header('Location: profile.php');
             exit;
         } else {
