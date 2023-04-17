@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
     // Get the form data
     $game_name = trim($_POST['game_name']);
     $url = trim($_POST['url']);
+	$image = trim($_POST['image']);
     // Validate the form data
     if (empty($game_name) || empty($url)) {
         $error = 'Please enter a game name and url.';
@@ -19,9 +20,10 @@ if (isset($_POST['submit'])) {
             $error = 'That game already exists.';
         } else {
             // Insert the game into the database
-            $stmt = $db->prepare('INSERT INTO games (name, url) VALUES (:game_name, :url)');
+            $stmt = $db->prepare('INSERT INTO games (name, url, image) VALUES (:game_name, :url, :image)');
             $stmt->bindParam(':game_name', $game_name);
             $stmt->bindParam(':url', $url);
+			$stmt->bindParam(':image', $image);
             $stmt->execute();
             // Redirect to the games page
             header('Location: index.php');
@@ -57,7 +59,9 @@ if (isset($_POST['submit'])) {
       <label for="game_name">Game Name</label>
       <input type="text" name="game_name" id="game_name">
       <label for="url">URL</label>
-      <input type="text" name="url" id="url">
+	  <input type="text" name="url" id="url">
+	  <label for="image">Image url</label>
+	  <input type="text" name="image" id="image">
       <input type="submit" name="submit" value="Add Game">
     </form>
   </main>
