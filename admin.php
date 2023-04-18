@@ -44,10 +44,11 @@ if (isset($_POST['submit'])) {
   <header>
     <nav>
       <ul>
-        <img class="logo" src="images/ormondgames.png" alt="logo">
+        <a href='index.php'><img class="logo" src="images/ormondgames.png" alt="logo"></a>
         <li><a href="index.php">Games</a></li>
         <li><a href="support.php">Support</a></li>
         <li><a href="contacts.php">Contact</a></li>
+        <li><a href="profile.php">Profile</a></li>
         <li><a href="admin.php" class="active">Admin</a></li>
         <li><a href="logout.php">Log out</a></li>
     </nav>

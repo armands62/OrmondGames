@@ -14,7 +14,7 @@
   <header>
     <nav>
       <ul>
-        <img class="logo" src="images/ormondgames.png" alt="logo">
+        <a href='index.php'><img class="logo" src="images/ormondgames.png" alt="logo"></a>
         <li><a href="index.php" class="active">Games</a></li>
         <li><a href="support.php">Support</a></li>
         <li><a href="#">Contact</a></li>
@@ -32,24 +32,22 @@
         ?>
     </nav>
   </header>
-  
   <main>
-    <h2>Games</h2>
-    <?php
-      require_once 'backend/db.php';
-      $stmt = $db->prepare('SELECT * FROM games');
-      $stmt->execute();
-      $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($games as $game) {
-        echo '<div class="game">';
-        echo '<h3>' . $game['name'] . '</h3>';
-        echo '<img src="' . $game['image'] . '" alt="' . $game['name'] . '">';
-        echo '<a href="game.php?id=' . $game['id'] . '">Play</a>';
-        echo '</div>';
-      }
-    ?>
-   </main>
-
+    <div class="game-list">
+      <?php
+        require_once 'backend/db.php';
+        $stmt = $db->prepare('SELECT * FROM games');
+        $stmt->execute();
+        $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($games as $game) {
+          echo '<div class="game">';
+          echo '<h2>' . $game['name'] . '</h2>';
+          echo '<a href="game.php?id=' . $game['id'] . '"><img src="' . $game['image'] . '" alt="' . $game['name'] . '"></a>';
+          echo '</div>';
+        }
+      ?>
+    </div>
+  </main>
     <?php include 'footer.php'; ?>
 </body>
 </html>
