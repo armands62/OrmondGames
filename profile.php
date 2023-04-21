@@ -42,7 +42,6 @@
     </nav>
   </header>
   <main>
-    <div class="profile-wrapper">
         <section id="profile-details">
         <!-- User information section -->
         <h2>User Information</h2>
@@ -76,26 +75,12 @@
                     header('Location: profile.php');
                 }
             ?>
+            <h3><a href="change-password.php">Change Password</a></h3>
+            <h3><a href="change-email.php">Change Email</a></h3>
+            <h3><a href="change-username.php">Change Username</a></h3>
+            <h3><a href="delete-account.php">Delete Account</a></h3>
         </div>
-        </section>
-
-        <section id="game-scores">
-                <h2>Game Scores</h2>
-                <div class="game-score">
-                    <h3>Game 1</h3>
-                    <p>Highest score: 100</p>
-                </div>
-                <div class="game-score">
-                    <h3>Game 2</h3>
-                    <p>Highest score: 200</p>
-                </div>
-                <div class="game-score">
-                    <h3>Game 3</h3>
-                    <p>Highest score: 50</p>
-                </div>
-        </section>
-    </div>
-
+        
         <section id="profile-privacy">
             <h2>Privacy Settings</h2>
             <form action="#" method="post">

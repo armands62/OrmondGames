@@ -120,18 +120,57 @@ footer {
   font-size: 1.2rem;
 }
 
-.profile-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.profile-info a {
+  color: #000000;
+  text-decoration: none;
 }
-
 #profile-details {
   flex-basis: 50%;
 }
 
 #game-scores {
   flex-basis: 45%;
+}
+
+/* Game page */
+
+.game-info h2 {
+  text-align: center;
+  font-size: 4rem;
+}
+
+.game-display {
+  display: flex;
+  justify-content: center;
+}
+
+.add-comment {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#add-comment {
+  background-color: #962118;
+  width: 98%;
+  border: double 10px #000000;
+}
+
+.add-comment input {
+  font-weight: bold;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  border: double 5px #000000;
+  background-color: #962118;
+  color: #000000;
+}
+
+.comment {
+  background-color: #79241e;
+  border: 5px double #000000;
+  padding: 0.2rem;
+  margin-bottom: 1rem;
 }
 
 /* Responsive styles */

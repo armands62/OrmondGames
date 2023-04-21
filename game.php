@@ -39,9 +39,54 @@
       $stmt = $db->prepare('SELECT * FROM games WHERE id = :id');
       $stmt->execute(['id' => $_GET['id']]);
       $game = $stmt->fetch(PDO::FETCH_ASSOC);
+      echo '<div class="game-info">';
       echo '<h2>' . $game['name'] . '</h2>';
+      echo '</div>';
+      echo '<div class="game-display">';
       echo '<div><script src="' . $game['url'] . '"></script></div>';
+      echo '</div>';
     ?>
+    <div class="comments">
+      <h2>Comments</h2>
+      <?php
+        if (isset($_SESSION['user_id'])) {
+          echo '<form class="add-comment" action="game.php" method="post">';
+          echo '<input type="hidden" name="game_id" value="' . $_GET['id'] . '">';
+          echo '<h3>Add a comment</h3>';
+          echo '<textarea name="comment" id="add-comment" rows="10" required></textarea>';
+          echo '<input type="submit" value="Add comment">';
+          echo '</form>';
+        } else {
+          echo '<p>You must be logged in to add a comment.</p>';
+        }
+      ?>
+      <?php
+        if(isset($_POST['comment'])) {
+          require_once 'backend/db.php';
+          $stmt = $db->prepare('INSERT INTO comments (user_id, game_id, comment, created_at) VALUES (:user_id, :game_id, :comment, :created_at)');
+          $stmt->execute([
+              'user_id' => $_SESSION['user_id'],
+              'game_id' => $_POST['game_id'],
+              'comment' => $_POST['comment'],
+              'created_at' => date('Y-m-d H:i:s')
+          ]);
+          header('Location: game.php?id=' . $_POST['game_id']);
+        }
+      ?>
+      <?php
+        require_once 'backend/db.php';
+        $stmt = $db->prepare('SELECT * FROM comments INNER JOIN users ON comments.user_id = users.id WHERE game_id = :game_id');
+        $stmt->execute(['game_id' => $_GET['id']]);
+        $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($comments as $comment) {
+          echo '<div class="comment">';
+          echo '<h3>' . $comment['username'] . '</h3>';
+          echo '<p>' . $comment['comment'] . '</p>';
+          echo '<p>' . $comment['created_at'] . '</p>';
+          echo '</div>';
+        }
+      ?>
+    </div>
    </main>
     <?php include 'footer.php'; ?>
 </body>
