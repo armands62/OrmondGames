@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($password, $user['password'])) {
-            // Authentication successful - start the session and set session variables
+            // Start the session and set session variables
             session_start();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $username;
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
             header('Location: profile.php');
             exit;
         } else {
-            // Authentication failed - show error message
+            // Show error message
             $error = 'Invalid username or password.';
         }
     }

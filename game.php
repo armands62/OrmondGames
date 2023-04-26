@@ -49,6 +49,7 @@
     <div class="comments">
       <h2>Comments</h2>
       <?php
+        // Add comment form
         if (isset($_SESSION['user_id'])) {
           echo '<form class="add-comment" action="game.php" method="post">';
           echo '<input type="hidden" name="game_id" value="' . $_GET['id'] . '">';
@@ -61,6 +62,7 @@
         }
       ?>
       <?php
+        // Add new comment function
         if(isset($_POST['comment'])) {
           require_once 'backend/db.php';
           $stmt = $db->prepare('INSERT INTO comments (user_id, game_id, comment, created_at) VALUES (:user_id, :game_id, :comment, :created_at)');
@@ -75,14 +77,27 @@
       ?>
       <?php
         require_once 'backend/db.php';
-        $stmt = $db->prepare('SELECT * FROM comments INNER JOIN users ON comments.user_id = users.id WHERE game_id = :game_id');
+        $stmt = $db->prepare('SELECT * FROM comments WHERE game_id = :game_id ORDER BY created_at DESC');
         $stmt->execute(['game_id' => $_GET['id']]);
         $comments = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($comments as $comment) {
+          $stmt = $db->prepare('SELECT * FROM users WHERE id = :id');
+          $stmt->execute(['id' => $comment['user_id']]);
+          $user = $stmt->fetch(PDO::FETCH_ASSOC);
           echo '<div class="comment">';
-          echo '<h3>' . $comment['username'] . '</h3>';
+          echo '<h3>' . $user['username'] . '</h3>';
           echo '<p>' . $comment['comment'] . '</p>';
-          echo '<p>' . $comment['created_at'] . '</p>';
+          echo '<p class="date">' . $comment['created_at'] . '</p>';
+          // Delete comment button for admin
+          if (isset($_SESSION['user_id'])) {
+            if ($_SESSION['admin'] == 1) {
+              echo '<form action="delete-comment.php" method="post">';
+              echo '<input type="hidden" name="comment_id" value="' . $comment['id'] . '">';
+              echo '<input type="hidden" name="game" value="' . $_GET['id'] . '">';
+              echo '<input type="submit" value="Delete comment">';
+              echo '</form>';
+            }
+          }
           echo '</div>';
         }
       ?>

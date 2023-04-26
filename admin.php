@@ -32,6 +32,15 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+<?php
+// Only allow admins to access this page
+session_start();
+if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
+    header('Location: index.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,6 +74,7 @@ if (isset($_POST['submit'])) {
 	  <input type="text" name="image" id="image">
       <input type="submit" name="submit" value="Add Game">
     </form>
+    <h2><a class='admin' href='user-list.php'>View users</a></h2>
   </main>
 
   <footer>
