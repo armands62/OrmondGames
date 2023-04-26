@@ -17,7 +17,7 @@
         <a href='index.php'><img class="logo" src="images/ormondgames.png" alt="logo"></a>
         <li><a href="index.php" class="active">Games</a></li>
         <li><a href="support.php">Support</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="contacts.php">Contact</a></li>
         <?php
             if (isset($_SESSION['user_id'])) {
             echo '<li><a href="profile.php">Profile</a></li>';

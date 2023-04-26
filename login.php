@@ -49,8 +49,8 @@ if (isset($_POST['submit'])) {
       <ul>
         <a href='index.php'><img class="logo" src="images/ormondgames.png" alt="logo"></a>
         <li><a href="index.php">Games</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="support.php">Support</a></li>
+        <li><a href="contacts.php">Contact</a></li>
         <li><a href="login.php" class="active">Log in</a></li>
     </nav>
   </header>

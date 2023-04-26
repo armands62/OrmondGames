@@ -1,12 +1,11 @@
+<!-- The contact page should have the logo in hte middle and below that, there should be the email adress which you can contact if you have questions and have a little text below the logo, which basically says thanks for visiting our website-->
 <?php
-  session_start();
-  ?>
-
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ormond Games</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -15,9 +14,9 @@
     <nav>
       <ul>
         <a href='index.php'><img class="logo" src="images/ormondgames.png" alt="logo"></a>
-        <li><a href="index.php" class="active">Games</a></li>
+        <li><a href="index.php">Games</a></li>
         <li><a href="support.php">Support</a></li>
-        <li><a href="contacts.php">Contact</a></li>
+        <li><a href="contacts.php" class="active">Contact</a></li>
         <?php
             if (isset($_SESSION['user_id'])) {
             echo '<li><a href="profile.php">Profile</a></li>';
@@ -32,22 +31,14 @@
         ?>
     </nav>
   </header>
+
   <main>
-    <div class="game-list">
-      <?php
-        require_once 'backend/db.php';
-        $stmt = $db->prepare('SELECT * FROM games');
-        $stmt->execute();
-        $games = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach ($games as $game) {
-          echo '<div class="game">';
-          echo '<h2>' . $game['name'] . '</h2>';
-          echo '<a href="game.php?id=' . $game['id'] . '"><img src="' . $game['image'] . '" alt="' . $game['name'] . '"></a>';
-          echo '</div>';
-        }
-      ?>
+    <div class="contact">
+      <h2>Contact Us</h2>
+      <img class="logo-contacts" src="images/ormondgames.png" alt="logo">
+      <p class='contact'>Thanks for visiting our website. If you have any questions, please contact us at armandsliepa3@gmail.com</p>
     </div>
-  </main>
+    </main>
     <?php include 'footer.php'; ?>
 </body>
 </html>

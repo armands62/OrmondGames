@@ -30,7 +30,7 @@
         <a href='index.php'><img class="logo" src="images/ormondgames.png" alt="logo"></a>
         <li><a href="index.php">Games</a></li>
         <li><a href="support.php">Support</a></li>
-        <li><a href="contact.php">Contact</a></li>
+        <li><a href="contacts.php">Contact</a></li>
         <li><a href="profile.php" class="active">Profile</a></li>
         <?php
         if ($_SESSION['admin'] == 1) {

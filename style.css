@@ -30,6 +30,21 @@ h3 {
 a {
   color: #e93c30;
   text-decoration: none;
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+input {
+  font-size: 1.2rem;
 }
 
 /* Header styles */
@@ -86,12 +101,12 @@ main {
   padding: 1rem;
 }
 
-/* Footer styles */
-footer {
+footer p {
   color: #e93c30;
   background-color: #000000;
   padding: 1rem;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 /* Home page */
@@ -116,14 +131,60 @@ footer {
 }
 
 /* Profile page */
+
+#profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .profile-info p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .profile-info a {
+  font-size: 1.5rem;
   color: #000000;
   text-decoration: none;
 }
+
+.profile-info a:hover {
+  color: #3d0501;
+}
+
+.profile-info form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-info textarea {
+  height: 10rem;
+  margin-bottom: 1rem;
+  border: double 5px #000000;
+  background-color: #962118;
+  color: #000000;
+}
+
+.profile-info button {
+  font-weight: bold;
+  width: 30%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  border: double 5px #000000;
+  background-color: #962118;
+  color: #000000;
+}
+
 #profile-details {
   flex-basis: 50%;
 }
@@ -171,6 +232,53 @@ footer {
   border: 5px double #000000;
   padding: 0.2rem;
   margin-bottom: 1rem;
+}
+
+/* Support page */
+.support {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.support form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.support textarea {
+  width: 100%;
+  height: 10rem;
+  margin-bottom: 1rem;
+  border: double 5px #000000;
+  background-color: #962118;
+  color: #000000;
+}
+
+.support input {
+  font-weight: bold;
+  width: 50%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  border: double 5px #000000;
+  background-color: #962118;
+  color: #000000;
+}
+
+/* Contact page */
+.logo-contacts {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact p {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 29rem;
 }
 
 /* Admin page */
