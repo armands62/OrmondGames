@@ -249,6 +249,14 @@ footer p {
   margin-bottom: 1rem;
 }
 
+.comment h3 {
+  font-size: 2rem;
+}
+
+.comment p {
+  font-size: 1.5rem;
+}
+
 /* Support page */
 .support {
   display: flex;
