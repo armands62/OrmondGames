@@ -49,3 +49,5 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
       ?>
     </table>
   </main>
+</body>
+</html>

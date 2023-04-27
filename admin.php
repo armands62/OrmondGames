@@ -6,9 +6,9 @@ if (isset($_POST['submit'])) {
     // Get the form data
     $game_name = trim($_POST['game_name']);
     $url = trim($_POST['url']);
-	$image = trim($_POST['image']);
+	  $image = trim($_POST['image']);
     // Validate the form data
-    if (empty($game_name) || empty($url)) {
+    if (empty($game_name) || empty($url) || empty($image)) {
         $error = 'Please enter a game name and url.';
     } else {
         // Check if the game already exists in the database
@@ -65,7 +65,7 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
 
   <main>
     <h2>Add Game</h2>
-    <form action="admin.php" method="post">
+    <form class='add-game' action="admin.php" method="post">
       <label for="game_name">Game Name</label>
       <input type="text" name="game_name" id="game_name">
       <label for="url">URL</label>
@@ -74,9 +74,12 @@ if (!isset($_SESSION['admin']) || !$_SESSION['admin']) {
 	  <input type="text" name="image" id="image">
       <input type="submit" name="submit" value="Add Game">
     </form>
-    <h2><a class='admin' href='user-list.php'>View users</a></h2>
+    <div class='admin-choices'>
+    <h2><a class='admin' href='user-list.php'>View/Delete users</a></h2>
+    <h2><a class='admin' href='support-messages.php'>View support messages</a></h2>
+    </div>
   </main>
 
-  <footer>
-    <p>Ormond Games &copy; 2020</p>
-  </footer>
+  <?php include 'footer.php'; ?>
+</body>
+</html>

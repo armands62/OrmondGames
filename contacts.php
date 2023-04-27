@@ -1,4 +1,3 @@
-<!-- The contact page should have the logo in hte middle and below that, there should be the email adress which you can contact if you have questions and have a little text below the logo, which basically says thanks for visiting our website-->
 <?php
     session_start();
 ?>

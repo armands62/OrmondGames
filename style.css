@@ -101,6 +101,8 @@ main {
   padding: 1rem;
 }
 
+/* Footer styles */
+
 footer p {
   color: #e93c30;
   background-color: #000000;
@@ -150,13 +152,18 @@ footer p {
 }
 
 .profile-info a {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #000000;
+  padding: 0.3rem;
   text-decoration: none;
+  border: double 5px #000000;
+  background-color: #962118;
 }
 
 .profile-info a:hover {
-  color: #3d0501;
+  font-size: 1.7rem;
+  background-color: #e93c30;
+  color: #000000;
 }
 
 .profile-info form {
@@ -175,13 +182,21 @@ footer p {
 }
 
 .profile-info button {
+  font-family: "warungasemregular";
+  font-size: 1.5rem;
+  cursor: pointer;
   font-weight: bold;
-  width: 30%;
+  width: 40%;
   padding: 0.5rem;
   margin-top: 0.3rem;
   margin-bottom: 0.5rem;
   border: double 5px #000000;
   background-color: #962118;
+  color: #000000;
+}
+
+.profile-info button:hover {
+  background-color: #e93c30;
   color: #000000;
 }
 
@@ -241,10 +256,22 @@ footer p {
   align-items: center;
 }
 
+.support h2 {
+  text-align: center;
+  font-size: 4rem;
+}
+
+.support h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
 .support form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
 }
 
 .support textarea {
@@ -258,12 +285,18 @@ footer p {
 
 .support input {
   font-weight: bold;
+  cursor: pointer;
   width: 50%;
   padding: 0.5rem;
   margin-top: 0.3rem;
   margin-bottom: 0.5rem;
   border: double 5px #000000;
   background-color: #962118;
+  color: #000000;
+}
+
+.support input:hover {
+  background-color: #e93c30;
   color: #000000;
 }
 
@@ -282,8 +315,63 @@ footer p {
 }
 
 /* Admin page */
-.admin {
+
+.add-game {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: double 10px #000000;
+  background-color: #962118;
+}
+
+.add-game input {
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+  border: double 5px #000000;
+  background-color: #962118;
   color: #000000;
+}
+
+.add-game input[type="submit"] {
+  font-size: 1.7rem;
+  font-family: "warungasemregular";
+  cursor: pointer;
+}
+
+.add-game input[type="submit"]:hover {
+  background-color: #e93c30;
+  color: #000000;
+}
+
+.admin-choices {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin {
+  font-size: 2rem;
+  color: #000000;
+  background-color: #962118;
+  border: double 5px #000000;
+  padding: 0.3rem;
+}
+
+.admin:hover {
+  font-size: 2.2rem;
+  background-color: #e93c30;
+  color: #000000;
+}
+
+/*Admin support page*/
+
+.message {
+  border: double 5px #000000;
+  background-color: #962118;
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Responsive styles */

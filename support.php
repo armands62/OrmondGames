@@ -1,22 +1,5 @@
-<!-- Make a support page which will have a form where the user can send their support request. The form should have a text area for the user to enter their message and a submit button. The form should submit to a file called support.php. -->
-<!-- In support.php, check if the user is logged in. If they are not logged in, redirect them to the login page. -->
-<!-- If the user is logged in, check if the form has been submitted. If it has, insert the message into the database. -->
-<!-- If the message has been inserted, show a success message. -->
-<!-- If the message has not been inserted, show an error message. -->
-<!-- If the user is not logged in, show an error message. -->
-<!-- The form should submit the user_id, the message and the date. -->
-
 <?php
 session_start();
-// Write the code to insert the message into the database
-// If the message has been inserted, show a success message
-// If the message has not been inserted, show an error message
-// If the user is not logged in, show an error message
-// The form should submit the user_id, the message and the date
-// If the user is logged in, check if the form has been submitted
-// If the form has been submitted, insert the message into the database
-// If the user is not logged in, redirect them to the login page
-// Write the code now.
 if (isset($_SESSION['user_id'])) {
     if (isset($_POST['message'])) {
         require_once 'backend/db.php';
@@ -73,6 +56,7 @@ if (isset($_SESSION['user_id'])) {
         <div class="support">
             <h2>Support</h2>
             <h3>Send us your complaints here!</h3>
+            <h3>We will send you an email responding to your message as quick as we can!</h3>
             <form action="support.php" method="post">
                 <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message here"></textarea>
                 <input type="submit" value="Send">

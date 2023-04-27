@@ -80,17 +80,6 @@
             <h3><a href="change-username.php">Change Username</a></h3>
             <h3><a href="delete-account.php">Delete Account</a></h3>
         </div>
-        
-        <section id="profile-privacy">
-            <h2>Privacy Settings</h2>
-            <form action="#" method="post">
-                <div class="form-group">
-                <label for="private-profile">Make my profile private</label>
-                    <input type="checkbox" name="private" id="private-profile">
-                </div>
-                <button type="submit">Save Settings</button>
-            </form>
-        </section>
     </main>
 
     <?php include 'footer.php'; ?>
