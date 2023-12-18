@@ -30,6 +30,7 @@ if (isset($_POST['submit'])) {
         } else {
             // Show error message
             $error = 'Invalid username or password.';
+            echo '<p class="error">' . $error . '</p>';
         }
     }
 }
